@@ -2,9 +2,12 @@
 const router = require('express').Router(); 
 
 const {
-    adminLogin, menuEntry, createAdmin, menuView, editMenu, adminDashboard
-     
-} = require('../controllers/userController')
+    adminLogin, menuEntry, createAdmin, menuView, editMenu, adminDashboard    
+} = require('../controllers/adminController')
+ 
+const {
+    customerReg
+} = require('../controllers/customerController')
  
 
 router.get('/adminLogin', adminLogin);  
@@ -16,7 +19,11 @@ router.get('/createAdmin', createAdmin);
 router.post('/createAdmin', createAdmin);  
 router.get('/menuView', menuView);  
 router.get('/editMenu/:id', editMenu);  
-router.post('/editMenu/:id', editMenu);  
+router.post('/editMenu/:id', editMenu); 
+
+
+router.get('/customerReg', customerReg);  
+router.post('/customerReg', customerReg);  
 
 
 module.exports = router;
