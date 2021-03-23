@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  p= message
+  div
+    form(method='POST' action='/api/editMenu/#{menu_data[0]._id}')
+      table.table.table-bordered
+        tbody
+          tr
+            th Dish Name
+            td
+              input.form-control(type='text' name='dish_name' value='#{menu_data[0].dishName}')
+          tr
+            th Dish Price
+            td
+              input.form-control(type='text' name='dish_price' value='#{menu_data[0].dishPrice}')
+          tr
+            th Status
+            td
+              select.form-control(name='status')
+                option(value='1') Active
+                option(value='0') Inactive
+          tr
+            th
+            td
+              input.btn.btn-info(type='submit' value='Update')

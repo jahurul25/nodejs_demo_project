@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p= message
+  div
+    form(method='POST' action='/api/createAdmin')
+      table
+        tbody
+          tr
+            th User Name
+            td
+              input(type='text' name='user_name')
+          tr
+            th User Password
+            td
+              input(type='password' name='user_pass')
+          tr
+            th
+            td
+              input(type='submit' value='Admin Registration')

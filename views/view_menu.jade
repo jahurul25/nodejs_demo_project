@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p= message
+  div 
+    table.table.table-bordered
+        tbody
+            tr
+                th Dish Name
+                th Dish Price
+                th Status
+                th Action
+            each lst in menu_list 
+                tr
+                    td #{lst.dishName}
+                    td #{lst.dishPrice}
+                    td #{lst.status}
+                    td
+                        a(href='/api/editMenu/#{lst._id}') Edit
+                     
+        
